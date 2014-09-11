@@ -1,0 +1,17 @@
+import time
+
+def profile(f):
+  def g(x):
+       start=time.time()
+       res=f(x)
+       end=time.time()
+       t=end-start
+       print 'time taken for execution is : ',t
+  return g
+
+@profile
+def square(x):
+  return x * x
+
+square(10)
+
